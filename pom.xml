@@ -83,6 +83,23 @@
 			<artifactId>spring-aspects</artifactId>
 			<version>3.2.2.RELEASE</version>
 		</dependency>
-		
+		<!-- http://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency>
+		<!-- http://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server -->
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>7.6.15.v20140411</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-webapp</artifactId>
+			<version>7.6.15.v20140411</version>
+		</dependency>
+
 	</dependencies>
 </project>
