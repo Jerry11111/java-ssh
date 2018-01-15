@@ -3,6 +3,7 @@ package com.java.ssh.netty.pool;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -20,6 +21,7 @@ public class NIOServer {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(parentGroup, childGroup)
                            .channel(NioServerSocketChannel.class)
+                           .option(ChannelOption.SO_BACKLOG, 5)
                            .handler(new LoggingHandler(LogLevel.INFO))
                            .childHandler(new ChannelInitializer<SocketChannel>() {
                                 @Override

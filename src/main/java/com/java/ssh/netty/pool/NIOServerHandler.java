@@ -19,7 +19,7 @@ public class NIOServerHandler extends ChannelInboundHandlerAdapter {
     	System.out.println(String.format("[server] [%s channelRegistered]", channel));
     	if(pool.exceedMax()){
     		System.err.println(String.format("[server] [%s disconnect]", channel));
-    		channel.disconnect();
+    		channel.close();
     		return;
     	}
 		pool.addChannel(channel);

@@ -53,8 +53,9 @@ public class NIOClient {
 	}
 	
 	public void run(){
+		NIOConn conn = null;
 		try {
-			NIOConn conn = pool.getConn();
+			conn = pool.getConn2();
 			CallbackService callback = new CallbackService();
 			//NIOClientPool.register(channel, callback);
 			int seq = NIOClientPool.INSTANCE.incrementAndGet();
@@ -81,6 +82,8 @@ public class NIOClient {
             }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
+		}finally{
+			pool.returnConn(conn);
 		}
 	}
 	
